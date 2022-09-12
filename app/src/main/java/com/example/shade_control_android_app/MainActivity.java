@@ -3,9 +3,12 @@ package com.example.shade_control_android_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -49,8 +52,23 @@ public class MainActivity extends AppCompatActivity {
         String clientId = MqttClient.generateClientId();
 
 
-        
-        client = new MqttAndroidClient(this.getApplicationContext(), "wss://myhomeipdk.hopto.org:8883",clientId);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        String mqtt_server = preferences.getString("mqtt_server", "");
+        String mqtt_port = preferences.getString("mqtt_port", "");
+        String mqtt_protocol = preferences.getString("mqtt_protocol", "");
+
+
+
+        if(mqtt_server.equalsIgnoreCase("") || mqtt_port.equalsIgnoreCase("")|| mqtt_protocol.equalsIgnoreCase(""))
+        {
+            Intent myIntent = new Intent(MainActivity.this, Insert_mqtt_credentials.class);
+            MainActivity.this.startActivity(myIntent);
+        }
+
+
+
+        client = new MqttAndroidClient(this.getApplicationContext(), mqtt_protocol + "://" + mqtt_server + ":" + mqtt_port, clientId);
 
 
         // Register the onClick listener with the implementation above
@@ -326,6 +344,14 @@ public class MainActivity extends AppCompatActivity {
         } catch (MqttException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void openOptions(View v){
+        Intent myIntent = new Intent(MainActivity.this, Insert_mqtt_credentials.class);
+        //myIntent.putExtra("key", value); //Optional parameters
+        MainActivity.this.startActivity(myIntent);
+
     }
 
 
