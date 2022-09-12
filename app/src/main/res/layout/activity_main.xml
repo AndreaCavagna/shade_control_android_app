@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tooltipText="ew"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/go_down"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="268dp"
+        android:enabled="false"
+        android:longClickable="true"
+        android:onClick="go_down"
+        android:text="GIU"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:cornerRadius="50px"
+        app:icon="@android:drawable/dark_header"
+        app:iconTint="#00E53935"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_up"
+        app:layout_constraintVertical_bias="0.833"
+        app:strokeColor="#ECECEC" />
+
+    <Button
+        android:id="@+id/full_down"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="268dp"
+        android:enabled="false"
+        android:longClickable="true"
+        android:onClick="full_down"
+        android:text="tutto giu"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:cornerRadius="50px"
+        app:icon="@android:drawable/dark_header"
+        app:iconTint="#00E53935"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/go_up"
+        app:layout_constraintVertical_bias="0.75"
+        app:strokeColor="#ECECEC" />
+
+    <Button
+        android:id="@+id/go_up"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="416dp"
+        android:enabled="false"
+        android:longClickable="true"
+        android:onClick="go_up"
+        android:text="SU "
+        android:textSize="20sp"
+        app:cornerRadius="50px"
+        app:icon="?attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/stop_movement"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="128dp"
+        android:enabled="false"
+        android:longClickable="true"
+        android:onClick="stop_motion"
+        android:shadowColor="#FF0000"
+        android:text="stop"
+        android:textColor="#FF0000"
+        android:textSize="20sp"
+        app:cornerRadius="50px"
+        app:icon="?attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#5706FB"
+        app:strokeColor="#00FF0B" />
+
+    <Button
+        android:id="@+id/full_up"
+        android:layout_width="135dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="408dp"
+        android:enabled="false"
+        android:longClickable="true"
+        android:onClick="full_up"
+        android:text="tutto su "
+        android:textSize="20sp"
+        app:cornerRadius="50px"
+        app:icon="?attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/mqtt_reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/check_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Server non connesso" />
+
+    <TextView
+        android:id="@+id/check_connection_gate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Tenda non connessa!"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/check_connection_gate_posix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text=""
+        android:textColor="#575757"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar4"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="80dp"
+        android:max="5"
+        android:progress="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="460dp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
